@@ -1,13 +1,14 @@
 package org.example;
 
-public class Postgresql implements Repositery{
+public class Postgresql extends Repositery {
+
     @Override
-    public void connectdb() {
-        System.out.println("Connect : postgresql");
+    void connectdb() {
+        System.out.println("connect postgres");
     }
 
     @Override
-    public void addcustomertodb(Customer customer) {
-        System.out.println("Add custome data into Postgresql");
+    void addcustomertodb(Customer customer) {
+        System.out.println("add custome data in postgres");
     }
 }
