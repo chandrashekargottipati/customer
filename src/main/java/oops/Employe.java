@@ -5,20 +5,43 @@ public class Employe {
     String name;
     String email;
     String password;
+    byte age;
 
-    public int getId() {
-        return id;
+    //with out retrun and parameters
+
+    void displayEmployeDetails(){
+        System.out.println("Id "+id);
+        System.out.println("Name "+name);
+        System.out.println("Email "+email);
+        System.out.println("Password "+password);
+        System.out.println("age "+age);
+
     }
 
-    public String getName() {
-        return name;
+    //with parameter
+    void displayEmployename(String name){
+        System.out.println("Employe name is "+name);
     }
 
-    public String getEmail() {
-        return email;
+    //with return type
+    byte discount(){
+        System.out.println("disocunt method call......");
+        byte discount = 0;
+        if(age>=60){
+            discount = 30;
+        } else if (age >= 50 && age <=60) {
+            discount = 10;
+        }else {
+            discount = 5;
+        }
+
+        return discount;
     }
 
-    public String getPassword() {
-        return password;
+    //return and parameters
+    double finalproductpriceAfterDiscount(double price){
+        byte discountprice = discount();
+        double finalpric = price - (discountprice * price) / 100;
+        return finalpric;
     }
 }
