@@ -1,6 +1,6 @@
 package foodie.util;
 
-import foodie.model.Customer;
+import foodie.model.Customermodel;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,28 +11,28 @@ import java.util.List;
 public class CsvreadCustomerUtill {
 
     String customercsvpath = "D:\\java\\hello-world\\src\\main\\java\\foodie\\data\\customers.csv";
-    List<Customer> customerList = new ArrayList<>();
+    List<Customermodel> customermodelList = new ArrayList<>();
     String line;
 
-    public List<Customer> readcustomerfromcsv() {
+    public List<Customermodel> readcustomerfromcsv() {
         String csvsplit = ",";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(customercsvpath))) {
             bufferedReader.readLine();
             while ((line = bufferedReader.readLine()) != null) {
                 String[] data = line.split(csvsplit);
-                Customer customer = new Customer();
-                customer.setId(data[0]);
-                customer.setName(data[1]);
-                customer.setEmail(data[2]);
-                customer.setPassword(data[3]);
-                customerList.add(customer);
+                Customermodel customermodel = new Customermodel();
+                customermodel.setId(data[0]);
+                customermodel.setName(data[1]);
+                customermodel.setEmail(data[2]);
+                customermodel.setPassword(data[3]);
+                customermodelList.add(customermodel);
             }
         } catch (IOException e) {
             System.out.println("File not found in thi path"+ customercsvpath);
             System.exit(0);
             e.printStackTrace();
         }
-        return customerList;
+        return customermodelList;
     }
 
 

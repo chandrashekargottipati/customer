@@ -2,6 +2,7 @@ package strem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class EmployeRepository {
 
@@ -24,4 +25,10 @@ public class EmployeRepository {
     public List<Employee> getallEmployedetails(){
         return this.employeeList;
     }
+
+    public Optional<Employee> getEmployeid(int id){
+        return this.employeeList.stream().filter(employee -> employee.getId() == id).findFirst();
+    }
+
+
 }

@@ -14,6 +14,7 @@ public class CustomerMembership {
         productPrice = 30000;
         int discount;
         int discountPercentage;
+        discountPercentage = 0;
         char memerShip;
         memerShip = 'D';
         if (memerShip == 'D') {

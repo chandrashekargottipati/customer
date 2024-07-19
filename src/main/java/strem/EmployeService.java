@@ -1,7 +1,7 @@
 package strem;
 
-import javax.swing.plaf.PanelUI;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class EmployeService {
@@ -31,5 +31,18 @@ public class EmployeService {
 
             }
         });
+    }
+
+    public List<String> getemployeeEmail(){
+        return this.employeRepository.getallEmployedetails().stream().map(Employee::getEmail).collect(Collectors.toList());
+    }
+
+    public Employee getemployebyid(int id) throws EmployeeNotfoundException {
+        Optional<Employee> optional =  this.employeRepository.getEmployeid(id);
+        if (optional.isPresent()){
+            return optional.get();
+        }else {
+            throw new EmployeeNotfoundException("Employee Not found with id : "+id);
+        }
     }
 }
