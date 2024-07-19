@@ -1,4 +1,4 @@
-import com.helloworld.java.conditionalstements.foodie.ui.Menu;
+import com.helloworld.java.foodie.ui.Menu;
 
 public class Main {
     public static void main(String[] args) {
