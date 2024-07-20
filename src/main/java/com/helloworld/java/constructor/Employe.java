@@ -3,26 +3,25 @@ package com.helloworld.java.constructor;
 public class Employe {
     int id;
     String name;
-
     String email;
     String password;
     byte age;
 
+    final static String COMP = "apple";
 
     Employe() {
         System.out.println("constructor call ");
     }
 
-    Employe(int id, String name, String email, String password, byte age) {
-        this.id = this.id;
+    Employe(int i, String name, String email, String password, byte age) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.age = age;
-        config();
     }
 
-    void config(){
+    void config() {
         System.out.println("called config method");
     }
 

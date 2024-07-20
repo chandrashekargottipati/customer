@@ -6,5 +6,7 @@ public class Main {
         employe.displayEmployeDetails();
         Employe employe1 = new Employe(10,"chandu","candu@gmail.com","123",(byte)30);
         employe1.displayEmployeDetails();
+        System.out.println(Employe.COMP);
+//        System.out.println(employe1.COMP);
     }
 }
